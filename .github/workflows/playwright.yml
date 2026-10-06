@@ -47,6 +47,8 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test -g "Data driven"
       # Install Allure CLI (official)
+      - name: Install Allure
+        run: npm install -D allure-playwright
       - name: Install Allure CLI
         run: npm install -g allure-commandline
       # Generate Allure report
