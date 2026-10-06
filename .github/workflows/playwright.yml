@@ -55,6 +55,13 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test -g "Data driven"
         continue-on-error: true
+
+      # Debug Allure results
+      - name: Check Allure Results after running test
+        if: always()
+        run: |
+          echo "===== ALLURE RESULTS ====="
+          ls -la allure-results || echo "allure-results does not exist"
       # Install Allure CLI (official)
       - name: Install Allure
         run: npm install -g allure-commandline
